@@ -21,6 +21,13 @@ export enum ContractType {
 	Internship = 'Internship'
 }
 
+export enum Category {
+	Programmation = 'Programming Languages',
+	Libraries = 'Frameworks and Libraries',
+	Database = 'Databases and Cloud Hosting',
+	Tools = 'Tools'
+}
+
 export type Asset = string | { light: string; dark: string };
 
 export interface Item {
@@ -44,6 +51,7 @@ export interface IconLink extends Link {
 
 export interface Skill extends Omit<Item, 'shortDescription'> {
 	color: string;
+	category: Category;
 }
 
 export interface Project extends Item {

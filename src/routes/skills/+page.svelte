@@ -7,8 +7,10 @@
 	import { isBlank } from '@riadh-adrani/utils';
 	import { getAssetURL } from '$lib/data/assets';
 	import UIcon from '$lib/components/Icon/UIcon.svelte';
+	import { Category } from '$lib/types';
 
 	const { items, title } = SKILLS;
+	const category = Object.values(Category);
 
 	let result: Array<Skill> = items;
 
@@ -30,18 +32,24 @@
 			<p class="font-300">Could not find anything...</p>
 		</div>
 	{:else}
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-5 mt-10">
-			{#each result as skill (skill.slug)}
-				<Card
-					classes={['cursor-pointer decoration-none']}
-					tiltDegree={1}
-					href={`${base}/skills/${skill.slug}`}
-					bgImg={getAssetURL(skill.logo)}
-					color={skill.color}
-				>
-					<p class="text-[var(--tertiary-text)]">{skill.name}</p>
-				</Card>
-			{/each}
+		{#each category as cat}
+		<div>
+			<h1>{cat}</h1>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-5 mt-10 pb-8">
+				{#each result as skill (skill.slug)}
+					{#if skill.category === cat}
+						<Card
+							classes={['decoration-none']}
+							tiltDegree={1}
+							bgImg={getAssetURL(skill.logo)}
+							color={skill.color}
+						>
+							<p class="text-[var(--tertiary-text)]">{skill.name}</p>
+						</Card>
+					{/if}
+				{/each}
+			</div>
 		</div>
+		{/each}
 	{/if}
 </SearchPage>
