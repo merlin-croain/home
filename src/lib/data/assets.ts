@@ -40,7 +40,8 @@ const Assets = {
 	Mutaero: a('mutaero.png'),
 	Terminal: a('terminal.svg'),
 	Digital: a('digital-max.jpg'),
-	IUT: a('iut.png')
+	IUT: a('iut.png'),
+	Oracle: a('oracle.svg')
 };
 
 export default Assets;
