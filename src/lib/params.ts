@@ -13,6 +13,7 @@ import {
 	type EducationPageParams
 } from './types';
 import { Icons } from './utils';
+import { base } from '$app/paths';
 
 export const TITLE_SUFFIX = 'Merlin Croain';
 
@@ -83,7 +84,7 @@ export const SKILLS: SkillsPageParams = {
 
 export const RESUME: ResumePageParams = {
 	title: 'Resumé',
-	item: ''
+	item: `${base}/cv_croain.pdf`
 };
 
 export const SEARCH: SearchPageParams = {
