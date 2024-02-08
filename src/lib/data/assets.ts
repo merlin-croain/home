@@ -41,7 +41,12 @@ const Assets = {
 	Terminal: a('terminal.svg'),
 	Digital: a('digital-max.jpg'),
 	IUT: a('iut.png'),
-	Oracle: a('oracle.svg')
+	Oracle: a('oracle.svg'),
+	SQL: a('sql.svg'),
+	PLSQL: a('plsql.svg'),
+	PowerBI: a('powerbi.svg'),
+	Keras: a('keras.svg'),
+	Jupyter: a('jupyter.svg')
 };
 
 export default Assets;
